@@ -1,4 +1,4 @@
-# **GO MY CODE PROJECT.**  
+# **GO MY CODE PROJECT.** 
 # **Haberman's Cancer Survival - Exploratory Data Analysis (EDA)**  
 
 ## **1. Introduction**  
@@ -8,7 +8,6 @@ Breast cancer remains one of the most prevalent cancers worldwide, making early 
 
 ## **2. Business Understanding**  
 Understanding survival rates after breast cancer surgery is essential for healthcare providers to optimize treatment and improve patient outcomes. Accurate predictions can assist in:  
-
 - **Personalized Treatment Planning:** Tailoring post-operative care based on individual survival risk.  
 - **Resource Allocation:** Directing medical resources and attention to high-risk patients.  
 - **Improved Patient Outcomes:** Identifying critical factors affecting recovery to enhance long-term survival rates.  
@@ -22,7 +21,6 @@ By leveraging historical patient data, this project aims to explore patterns tha
 
 ## **3. Objective**  
 The specific goals of this exploratory data analysis are to:  
-
 - **Explore** the dataset to uncover trends and patterns related to patient survival.  
 - **Identify** the key features that influence the five-year survival rate post-surgery.  
 - **Predict** survival likelihood using variables such as age, year of operation, and the number of positive axillary lymph nodes.  
@@ -54,7 +52,6 @@ This analysis also aims to highlight potential data biases and uncover critical 
 ---
 
 ## **5. Data Preparation**  
-
 - **Data Cleaning:**  
   - Renamed columns for clarity.  
   - Re-coded the `Survival Status` to binary values (1 = survived, 0 = did not survive).  
@@ -77,38 +74,60 @@ This analysis also aims to highlight potential data biases and uncover critical 
 ### **Univariate Analysis:**  
 
 - #### **1. Age:**  
-  ![Distribution of Age](Visualizations/distribution_of_age_univariate.png)  
+  - ![Distribution of Age - Univariate Analysis](Visualizations/Distribution%20of%20age%20univariate%20analysis.png)  
+   > *Most patients were between **40 and 60 years** old.*  
 
 - #### **2. Operation Year:**  
-  ![Distribution of Operation Year](Visualizations/distribution_of_operation_year_univariate.png)  
+  - ![Distribution of Operation Year - Univariate Analysis](Visualizations/distribution%20of%20operation%20year-Univariate.png)  
+   > *Surgeries were evenly distributed between **1958 and 1970**.*  
 
 - #### **3. Axillary Nodes:**  
-  ![Distribution of Axillary Nodes](Visualizations/distribution_of_axillary_nodes_univariate.png)  
+  - ![Distribution of Axillary Nodes - Univariate Analysis](Visualizations/distribution%20of%20axillary%20nodes_univariate.png)  
+   > *Majority of patients had fewer than **5 positive axillary nodes**.*  
 
 - #### **4. Survival Status:**  
-  ![Survival Status](Visualizations/survival_status_univariate.png)  
+  - ![Survival Status - Univariate Analysis](Visualizations/Survival%20status_univariate.png)  
+   > *About **68%** of patients survived 5 years or longer post-surgery.*  
+
 
 ### **Bivariate Analysis:**  
 
 - #### **1. Age vs. Survival:**  
-  ![Survival vs Age](Visualizations/survival_vs_age_bivariate.png)  
+  - ![Survival vs Age - Bivariate Analysis](Visualizations/survival%20vs%20age_bivariate.png)  
+   > *Younger patients had higher survival rates.*  
 
 - #### **2. Axillary Nodes vs. Survival:**  
-  ![Axillary Nodes vs Survival](Visualizations/axillary_vs_survival_bivariate.png)  
+  - ![Axillary Nodes vs Survival - Bivariate Analysis](Visualizations/axillary%20vs%20survival_bivariate.png)  
+   > *Patients with fewer positive axillary nodes had a significantly higher chance of survival.*  
 
 - #### **3. Operation Year vs. Survival:**  
-  ![Operation Year vs Survival](Visualizations/operation_year_vs_survival_bivariate.png)  
+  - ![Operation Year vs Survival - Bivariate Analysis](Visualizations/operation%20year%20vs%20survival_bivariate.png)  
+   > *The year of surgery had minimal impact on survival rates.*  
+
 
 ### **Visualizations:**  
 
 - ### **Histograms:**  
-  ![Distribution of Axillary Nodes](Visualizations/histogram_of_axillary_nodes.png)  
+  - #### **1. Distribution of Axillary Nodes:**  
+    - ![Distribution of Axillary Nodes](Visualizations/Histogram%20of%20axillary%20nodes.png)  
+     > *Showed skewed distribution of axillary nodes, with many patients having zero positive nodes.*  
 
 - ### **Boxplots:**  
-  ![Box Plots of Axillary Nodes](Visualizations/box_plots_of_axillary_nodes.png)  
+  - #### **2. Box Plots of Axillary Nodes:**  
+    - ![Box Plots of Axillary Nodes](Visualizations/Box%20plots%20of%20axillary%20nodes.png)  
+     > *Highlighted outliers in axillary node counts among non-survivors.*  
 
 - ### **Heatmaps:**  
-  ![Correlation Matrix](Visualizations/correlation_matrix.png)  
+  - #### **3. Correlation Matrix:**  
+    - ![Correlation Matrix](Visualizations/correlation%20matrix.png)  
+    > *Revealed weak correlations between most features, except for axillary nodes, which had a notable negative correlation with survival.*  
+
+
+### **Key Findings:**  
+- **Age and axillary nodes** are significant predictors of survival.  
+- Patients with **fewer positive axillary nodes** had better survival rates.  
+- **Operation year** had no significant influence on survival outcomes.  
+- There is a **class imbalance** in the target variable, with more patients surviving than not.
 
 ---
 
@@ -127,12 +146,28 @@ These findings can help medical professionals focus on critical factors like lym
 ## **8. Recommendations**  
 
 ### **Business-Focused Recommendations:**  
-1. **Early Detection and Screening:** Promote regular screenings, especially for women over **40 years old**.  
-2. **Targeted Post-Surgery Care:** Implement personalized care plans for patients with higher axillary node counts.  
-3. **Patient Education:** Educate on early detection and survival impact of axillary nodes.  
-4. **Resource Allocation:** Prioritize high-risk patients for follow-up and monitoring.  
+1. **Early Detection and Screening:**  
+   - Promote regular screenings, especially for women over **40 years old**, to detect cancer early and reduce the likelihood of positive axillary nodes.  
+
+2. **Targeted Post-Surgery Care:**  
+   - Implement personalized post-operative care plans for patients with higher axillary node counts to improve survival chances.  
+
+3. **Patient Education:**  
+   - Educate patients on the importance of **early detection** and the impact of positive axillary nodes on survival outcomes.  
+
+4. **Resource Allocation:**  
+   - Allocate medical resources more efficiently by prioritizing high-risk patients (those with numerous positive axillary nodes) for intensive follow-up and monitoring. 
+ 
 
 ### **Technical Recommendations:**  
-1. **Further Modeling:** Apply machine learning models and address class imbalance using **SMOTE** or **class weighting**.  
-2. **Feature Scaling:** Use **StandardScaler** or **MinMaxScaler** for advanced models.  
-3. **Data Enhancement:** Include modern data and features like **tumor size** and **genetic markers**.  
+1. **Further Modeling:**  
+   - Apply machine learning models (e.g., **Logistic Regression**, **Random Forest**, **Decision Trees**) to predict survival probabilities.  
+   - Address the class imbalance using techniques like **SMOTE** or **class weighting**.  
+
+2. **Feature Scaling (if needed):**  
+   - If advanced algorithms like **SVM** or **KNN** are used, apply scaling techniques such as **StandardScaler** or **MinMaxScaler**.  
+
+3. **Data Enhancement:**  
+   - Incorporate more recent data reflecting modern surgical techniques and treatments.  
+   - Explore adding features such as **tumor size**, **hormone receptor status**, and **genetic markers** to improve predictive power.  
+
